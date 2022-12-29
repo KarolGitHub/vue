@@ -12,7 +12,7 @@ export default defineComponent({
       if (dropdownPopoverShow.value) {
         dropdownPopoverShow.value = false;
       } else {
-        console.log(btnDropdownRef.value);
+        console.debug(btnDropdownRef.value);
         dropdownPopoverShow.value = true;
         createPopper<StrictModifiers>(
           btnDropdownRef.value,

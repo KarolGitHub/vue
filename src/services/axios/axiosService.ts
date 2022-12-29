@@ -1,4 +1,4 @@
-// @ts-ignore
+// @ts-nocheck
 import loading from "../../store/modules/loading";
 import { apiClient } from "./config";
 import { AxiosError, AxiosResponse } from "axios";

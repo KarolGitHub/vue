@@ -14,7 +14,7 @@ export default defineComponent({
   setup(props) {
     const { item } = toRefs(props);
     const addBag = () => {
-      console.log(item.value);
+      console.debug(item.value);
       products.actions.addBag(item.value);
     };
     return {

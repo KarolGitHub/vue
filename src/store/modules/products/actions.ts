@@ -11,7 +11,7 @@ export default {
       .get()
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          console.log(doc.data());
+          console.debug(doc.data());
           const item: Item = doc.data();
           item.id = doc.id;
           items.push(item);

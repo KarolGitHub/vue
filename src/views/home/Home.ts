@@ -8,7 +8,7 @@ export default defineComponent({
     const showModalDetail = ref(false);
     const item = ref<Item | undefined>({});
     const bag = computed<Item[]>(() => {
-      console.log(products.getters.getBag());
+      console.debug(products.getters.getBag());
       return products.getters.getBag();
     });
     const total = computed(() => bag.value.reduce((a, b) => a + b.price!, 0));
@@ -17,7 +17,7 @@ export default defineComponent({
     };
     const searchItem = async (): Promise<void> => {
       item.value = await products.actions.searchItem(id.value);
-      console.log("item.value", item.value);
+      console.debug("item.value", item.value);
       if (!item.value!.name) {
         const toastLocal = {
           body: "No articles found",

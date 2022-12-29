@@ -10,7 +10,7 @@ export default defineComponent({
         var slide = scrollSlide[index];
       }
       scrollSnap!.scrollLeft += slide!.scrollWidth;
-      console.log((scrollSnap!.scrollLeft += slide!.scrollWidth));
+      console.debug((scrollSnap!.scrollLeft += slide!.scrollWidth));
     };
 
     const previewsSlide = () => {
@@ -20,7 +20,7 @@ export default defineComponent({
         var slide = scrollSlide[index];
       }
       scrollSnap!.scrollLeft -= slide!.scrollWidth;
-      console.log((scrollSnap!.scrollLeft -= slide!.scrollWidth));
+      console.debug((scrollSnap!.scrollLeft -= slide!.scrollWidth));
     };
 
     return {

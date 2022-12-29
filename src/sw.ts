@@ -5,7 +5,7 @@ declare let self: ServiceWorkerGlobalScope;
 
 const manifest = self.__WB_MANIFEST;
 
-console.log(manifest);
+console.debug(manifest);
 
 precacheAndRoute(manifest);
 

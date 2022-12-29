@@ -138,14 +138,14 @@ const config: ChartConfiguration = {
 const theme = computed(() => storageTheme.theme)
 
 watch(() => theme.value, (value) => {
-  console.log('oldValue', value)
+  console.debug('oldValue', value)
   if (value === 'dark') {
     config.options!.scales!.x!.grid!.color = '#000000'
     config.options!.scales!.y!.grid!.color = '#000000'
     config.options!.scales!.x!.ticks!.color = '#000'
     config.options!.scales!.y!.ticks!.color = '#000'
     // config.options!.scales!.y!..color = '#000'
-    console.log('chart', Chart)
+    console.debug('chart', Chart)
     config.data.datasets[1].backgroundColor = '#000000'
     config.data.datasets[1].borderColor = '#000000'
     // @ts-ignore

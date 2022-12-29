@@ -1,6 +1,6 @@
-# Vue 3, TypeScript & Tailwind CSS Starter
+# Vue 3, TypeScript & Tailwind CSS Dashboard
 
-> A simple, Vue 3 starter with TypeScript support
+> A simple, Vue 3 dashboard with TypeScript support
 
 ## Features
 

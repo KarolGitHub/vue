@@ -48,10 +48,10 @@ try {
   const updateSW = registerSW({
     immediate: true,
     onOfflineReady() {
-      console.log("onOfflineReady");
+      console.debug("onOfflineReady");
     },
     onNeedRefresh() {
-      console.log("onNeedRefresh");
+      console.debug("onNeedRefresh");
     },
     onRegistered(swRegistration: ServiceWorkerRegistration) {
       swRegistration && handleSWManualUpdates(swRegistration);
@@ -61,9 +61,9 @@ try {
     },
   });
 } catch {
-  console.log("PWA disabled.");
+  console.debug("PWA disabled.");
 }
 
 if (!import.meta.env.DEV) {
-  console.log = function () {};
+  console.debug = function () {};
 }

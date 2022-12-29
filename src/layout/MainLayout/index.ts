@@ -10,7 +10,7 @@ export default defineComponent({
   },
   setup() {
     const loading = computed(() => loadingStore.getters.getLoading());
-    console.log("loading", loading.value);
+    console.debug("loading", loading.value);
     return {
       loading,
     };

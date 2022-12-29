@@ -13,7 +13,7 @@ const surePromise = <T>(
       };
     })
     .catch((error) => {
-      console.log("surePromise", error.response);
+      console.debug("surePromise", error.response);
       const { data } = error.response ?? { data: "Unexpected error" };
       return Promise.resolve({ success: false, data });
     });

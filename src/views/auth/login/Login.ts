@@ -1,12 +1,12 @@
 import { ref } from "vue";
 import { auth } from "../../../store";
 import { LogIn } from "../../../interface/Auth";
-import { Form, Field, ErrorMessage } from "vee-validate";
+import { Form as VForm, Field, ErrorMessage } from "vee-validate";
 
 export default {
   components: {
     Field,
-    Form,
+    VForm,
     ErrorMessage,
   },
 
@@ -20,7 +20,7 @@ export default {
     };
 
     const logIn = async (data: LogIn): Promise<void> => {
-      console.log(data);
+      console.debug(data);
       await auth.actions.logIn(data);
     };
 
