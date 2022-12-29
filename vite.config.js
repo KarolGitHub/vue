@@ -90,6 +90,10 @@ export default defineConfig({
         replacement: path.resolve(__dirname, "./src/server"),
       },
       {
+        find: "@/config",
+        replacement: path.resolve(__dirname, "./src/config"),
+      },
+      {
         find: "@/",
         replacement: path.resolve(__dirname, "./src"),
       },

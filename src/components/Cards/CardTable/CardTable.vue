@@ -587,7 +587,7 @@ const listItems = ref<List[]>([])
 
 const onFilterPagination = (list: List[]) => {
   listItems.value = list
-  console.log('lista en la tarjeta', list)
+  console.log('list', list)
 }
 
 const onChangePage = (currentPage: number): void => {

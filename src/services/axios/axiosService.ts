@@ -9,7 +9,7 @@ import { SurePromise } from "../../interface/SurePromise";
 
 export class AxiosService<T, U> {
   async postData(postData: U, url: string): Promise<SurePromise<T>> {
-    loading.actions.start("Cargando...");
+    loading.actions.start("Loading...");
     try {
       return await surePromise(apiClient.post<AxiosResponse>(url, postData));
     } catch (err: unknown) {

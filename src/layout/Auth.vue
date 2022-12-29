@@ -5,8 +5,8 @@
     <navbar />
     <main>
       <section class="relative w-full h-full py-40 min-h-screen">
-        <div class="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full"
-          :style="`background-image: url('${registerBg2}');`"></div>
+        <div class="absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-cover"
+          :style="`background-image: url('${registerBg}');`"></div>
         <router-view />
         <footer-small absolute />
       </section>
@@ -17,17 +17,17 @@
 import Navbar from '@/components/Navbars/AuthNavbar.vue';
 import FooterSmall from '@/components/Footers/FooterSmall/FooterSmall.vue';
 
-import registerBg2 from '@/assets/img/register_bg_2.png';
+import registerBg from '@/assets/img/register-bg.png';
 
 export default {
-  data() {
-    return {
-      registerBg2,
-    };
-  },
   components: {
     Navbar,
     FooterSmall,
+  },
+  data() {
+    return {
+      registerBg,
+    };
   },
 };
 </script>

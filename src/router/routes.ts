@@ -48,7 +48,7 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: "/admin/dashboard",
-        name: "DashBoard",
+        name: "Dashboard",
         component: Dashboard,
       },
       {

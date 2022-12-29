@@ -6,10 +6,10 @@
         <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
           <div class="pt-32 sm:pt-0">
             <h2 class="font-semibold text-4xl text-blueGray-600">
-              Vue Notus - A beautiful extension for Tailwind CSS.
+              Vue Dashboard - A beautiful extension for Tailwind CSS.
             </h2>
             <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
-              Vue Notus is Free and Open Source. It does not change any of the
+              Vue Dashboard is Free and Open Source. It does not change any of the
               CSS from
               <a href="https://tailwindcss.com/?ref=creativetim" class="text-blueGray-600" target="_blank">
                 Tailwind CSS.
@@ -47,8 +47,7 @@
       <div class="container mx-auto">
         <div class="flex flex-wrap items-center">
           <div class="w-10/12 md:w-6/12 lg:w-4/12 px-12 md:px-4 mr-auto ml-auto -mt-32">
-            <div
-              class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-emerald-500">
+            <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-emerald-500">
               <img alt="..."
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80"
                 class="w-full align-middle rounded-t-lg" />
@@ -82,7 +81,7 @@
                       CSS Components
                     </h6>
                     <p class="mb-4 text-blueGray-500">
-                      Vue Notus comes with a huge number of Fully Coded CSS
+                      Vue Dashboard comes with a huge number of Fully Coded CSS
                       components.
                     </p>
                   </div>
@@ -128,7 +127,7 @@
                     </h6>
                     <p class="mb-4 text-blueGray-500">
                       Built by developers for developers. You will love how easy
-                      is to to work with Vue Notus.
+                      is to to work with Vue Dashboard.
                     </p>
                   </div>
                 </div>
@@ -422,7 +421,7 @@
         <div class="w-full md:w-6/12 px-12 md:px-4">
           <h2 class="font-semibold text-4xl">Beautiful Example Pages</h2>
           <p class="text-lg leading-relaxed mt-4 mb-4 text-blueGray-500">
-            Vue Notus is a completly new product built using our past experience
+            Vue Dashboard is a completly new product built using our past experience
             in web templates. Take the examples we made for you and start
             playing with them.
           </p>
@@ -574,6 +573,11 @@ import profile from '@/assets/img/profile.jpg';
 import landing from '@/assets/img/landing.jpg';
 
 export default {
+  components: {
+    IndexNavbar,
+    FooterComponent,
+  },
+
   data() {
     return {
       patternVue,
@@ -588,10 +592,6 @@ export default {
       profile,
       landing,
     };
-  },
-  components: {
-    IndexNavbar,
-    FooterComponent,
   },
 };
 </script>

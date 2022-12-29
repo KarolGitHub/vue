@@ -1,8 +1,8 @@
 import github from "@/assets/img/github.svg";
 import google from "@/assets/img/google.svg";
 import { Form, Field, ErrorMessage } from "vee-validate";
-import { auth } from "../../../store";
-import { Register } from "../../../interface/Auth";
+import { auth } from "@/store";
+import { Register } from "@/interface/Auth";
 
 export default {
   components: {

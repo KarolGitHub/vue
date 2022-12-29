@@ -25,13 +25,16 @@ module.exports = {
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-unused-vars": "off",
     "max-len": "off",
-    "vue/multi-word-component-names": "off",
     "no-shadow": "off",
     "prettier/prettier": [
       "off",
       { singleQuote: true, endOfLine: "auto", trailingComma: "all" },
     ],
     "tailwindcss/no-contradicting-classname": "error",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "vue/multi-word-component-names": "off",
+    "vue/no-reserved-component-names": "off",
+    "vue/first-attribute-linebreak": "off",
   },
   overrides: [
     {

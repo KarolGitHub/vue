@@ -3,7 +3,7 @@ import { AxiosError } from "axios";
 
 apiClient.interceptors.request.use(
   (config) => {
-    console.log("configuración axios", config);
+    console.log("axios", config);
     // const { jwtToken } = user.getters.getProfile();
     // if (jwtToken) {
     //     config.headers['Authorization'] = `Bearer ${jwtToken}`;
@@ -21,11 +21,11 @@ apiClient.interceptors.response.use(
     return response;
   },
   async (error) => {
-    console.log("error en response", error.response.status);
+    console.log("error in response", error.response.status);
     if (error && error.response) {
       const axiosError = error as AxiosError;
       if (axiosError.response?.status === 401) {
-        // await alertApp.present('Sesión expirada', '', 'Error')
+        // await alertApp.present('Sesion expired', '', 'Error')
         // await user.actions.logOut()
       }
     }

@@ -10,14 +10,14 @@
           </div>
           <div class="btn-wrapper text-center">
             <button
-              class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
+              class="bg-white active:bg-blueGray-50 text-blueGray-700 px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
               type="button"
             >
               <img alt="..." class="w-5 mr-1" src="@/assets/img/github.svg" />
               Github
             </button>
             <button
-              class="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
+              class="bg-white active:bg-blueGray-50 text-blueGray-700 px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
               type="button"
             >
               <img alt="..." class="w-5 mr-1" src="@/assets/img/github.svg" />
@@ -30,7 +30,7 @@
           <div class="text-blueGray-400 text-center mb-3 font-bold">
             <small>Or sign in with credentials</small>
           </div>
-          <form @submit="logIn" :validation-schema="schema">
+          <form @submit.prevent="() => {}" :validation-schema="schema">
             {{errors}}
             <div class="relative w-full mb-3">
               <label
@@ -82,6 +82,7 @@
               <button
                 class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                 type="submit"
+                @click="logIn"
               >
                 Sign In
               </button>

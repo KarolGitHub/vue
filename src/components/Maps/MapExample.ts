@@ -5,7 +5,7 @@ export default defineComponent({
   mounted() {
     const { google } = window;
     let map = document.getElementById("map-canvas");
-    let infoWindow = new google.maps.InfoWindow();
+    const infoWindow = new google.maps.InfoWindow();
     const lat = map!.getAttribute("data-lat");
     const lng = map!.getAttribute("data-lng");
     const myLatlng = new google.maps.LatLng(lat, lng);
@@ -68,8 +68,8 @@ export default defineComponent({
     });
 
     const contentString =
-      '<div class="info-window-content"><h2>Vue Notus</h2>' +
-      "<p>A beautiful UI Kit and Admin for Tailwind CSS. It is Free and Open Source.</p></div>";
+      '<div class="info-window-content"><h2>Vue Dashboard</h2>' +
+      "<p>A beautiful UI Kit and Admin for Tailwind CSS</p></div>";
 
     const infowindow = new google.maps.InfoWindow({
       content: contentString,

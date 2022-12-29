@@ -17,7 +17,7 @@
                 </h1>
                 <p class="mt-4 text-lg text-blueGray-200">
                   This is a simple example of a Landing Page you can build using
-                  Vue Notus. It features multiple CSS components based on the
+                  Vue Dashboard. It features multiple CSS components based on the
                   Tailwind CSS design system.
                 </p>
               </div>
@@ -105,13 +105,12 @@
                 go. Just make sure you enable them first via JavaScript.
               </p>
               <router-link to="/" class="font-bold text-blueGray-700 mt-8">
-                Check Vue Notus!
+                Check Vue Dashboard!
               </router-link>
             </div>
 
             <div class="w-full md:w-4/12 px-4 mr-auto ml-auto">
-              <div
-                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-emerald-500">
+              <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-emerald-500">
                 <img alt="..."
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
                   class="w-full align-middle rounded-t-lg" />

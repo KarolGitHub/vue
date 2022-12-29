@@ -17,11 +17,11 @@ export default defineComponent({
     };
     const searchItem = async (): Promise<void> => {
       item.value = await products.actions.searchItem(id.value);
-      console.log("buscar", item.value);
+      console.log("item.value", item.value);
       if (!item.value!.name) {
         const toastLocal = {
-          body: "No se encontraron artículos",
-          tittle: "No existe el artículo",
+          body: "No articles found",
+          tittle: "The article does not exist",
           type: "error",
           show: true,
         };

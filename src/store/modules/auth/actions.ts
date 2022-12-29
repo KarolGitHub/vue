@@ -14,12 +14,12 @@ export default {
     if (response.success) {
       mutations.setAuth(true, response.data);
       await router.push({
-        name: "DashBoard",
+        name: "Dashboard",
       });
       return;
     }
     const toast: Toast = {
-      body: "Email o contraseña incorrectos",
+      body: "Incorrect email or password",
       tittle: "Error",
       type: "error",
       show: true,
@@ -43,8 +43,8 @@ export default {
     }
 
     const toast: Toast = {
-      body: "El registro se ha completado correctamente",
-      tittle: "Registro",
+      body: "Registration completed successfully",
+      tittle: "Success",
       type: "success",
       show: true,
     };
