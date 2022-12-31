@@ -52,7 +52,7 @@
             </a>
           </li>
 
-          <li v-if="config.deferredPrompt" class="flex items-center">
+          <li v-if="deferredPrompt" class="flex items-center">
             <button
               class="bg-white text-blueGray-700 active:bg-blueGray-50 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3 ease-linear transition-all duration-150"
               type="button" @click="install">
@@ -68,6 +68,8 @@
 <script>
 import PagesDropdown from '@/components/Dropdowns/PagesDropdown/PagesDropdown.vue';
 import config from "@/config";
+import Cookies from "js-cookie";
+import { notifications } from "@/store";
 
 export default {
   components: {
@@ -87,16 +89,26 @@ export default {
         this.deferredPrompt = e;
       }
     });
-    window.addEventListener("appinstalled", () => {
-      this.deferredPrompt = null;
-    });
   },
   methods: {
     setNavbarOpen() {
       this.navbarOpen = !this.navbarOpen;
     },
     async install() {
-      this.deferredPrompt.prompt();
+      await this.deferredPrompt.prompt();
+
+      await this.deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          const toast: Toast = {
+            body: "App installed successfully",
+            tittle: "Success",
+            type: "success",
+            show: true,
+          };
+          notifications.actions.presentToast(toast);
+        }
+        this.deferredPrompt = null
+      })
     }
   },
 };
