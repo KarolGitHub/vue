@@ -6,15 +6,18 @@ import {
   signInWithEmailAndPassword,
   UserCredential,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
-import { LogIn, Register } from "../../interface/Auth";
+import { Login, Register } from "../../interface/Auth";
 
 export default class Auth {
-  static async login(userForm: LogIn): Promise<UserCredential> {
+  static async login(userForm: Login): Promise<UserCredential> {
     const { email, password } = userForm;
     return await signInWithEmailAndPassword(auth, email, password);
   }
-
+  static async logout(): Promise<void> {
+    return await signOut(auth);
+  }
   static async register(registerForm: Register): Promise<UserCredential> {
     const { email, password } = registerForm;
     return await createUserWithEmailAndPassword(auth, email, password);

@@ -1,14 +1,14 @@
 import mutations from "./mutations";
-import router from "../../../router";
-import { loadingStore, notifications } from "../../index";
+import router from "@/router";
+import { loadingStore, notifications } from "@/store";
 // import { AuthService } from "../../../services";
 import Auth from "@/server/firebase/auth";
-import { LogIn, Register } from "../../../interface/Auth";
-import { Toast } from "../../../interface/Toast";
+import { Login, Register } from "@/interface/Auth";
+import { Toast } from "@/interface/Toast";
 // const authService = new AuthService();
 
 export default {
-  async logIn(loginForm: LogIn): Promise<void> {
+  async login(loginForm: Login): Promise<void> {
     try {
       const response = await Auth.login(loginForm);
       if (response.user) {
@@ -22,6 +22,22 @@ export default {
         body: "Incorrect email or password",
         tittle: "Error",
         type: "error",
+        show: true,
+      };
+      notifications.actions.presentToast(toast);
+    }
+  },
+
+  async logout(): Promise<void> {
+    try {
+      const response = await Auth.logout();
+      mutations.setAuth(false);
+      await router.push("/auth/login");
+    } catch (e: any) {
+      const toast: Toast = {
+        body: "Logged out successfully",
+        tittle: "Success",
+        type: "success",
         show: true,
       };
       notifications.actions.presentToast(toast);

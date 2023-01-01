@@ -9,12 +9,12 @@
         <!-- header -->
         <div class="flex flex-row justify-between items-center px-5 mt-5">
           <div class="text-gray-800">
-            <div class="font-bold text-xl">Taller Óptico Zorion</div>
+            <!-- <div class="font-bold text-xl"></div> -->
             <div class="text-xs">
               <div class="flex -mx-3">
                 <div class="w-full px-3 mb-5">
                   <label for="searchItem" class="text-xs font-semibold px-1"
-                    >Buscar</label
+                    >Search</label
                   >
                   <div class="flex">
                     <div
@@ -44,17 +44,12 @@
                       class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                       placeholder="johnsmith@example.com"
                     />
-                    <!--                    <button @click="searchItem"> buscar</button>-->
                   </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="flex items-center">
-            <!--            <div class="text-sm text-center mr-4">-->
-            <!--              <div class="font-light text-gray-500">last synced</div>-->
-            <!--              <span class="font-semibold">3 mins ago</span>-->
-            <!--            </div>-->
             <div>
               <span
                 class="px-4 py-2 bg-gray-200 text-gray-800 font-semibold rounded"
@@ -106,20 +101,7 @@
               />
             </div>
           </div>
-          <div v-if="bag.length === 0">No se ha agregado ningún producto</div>
-
-          <!--          <div-->
-          <!--            class="px-3 py-3 flex flex-col border border-gray-200 rounded-md h-32 justify-between">-->
-          <!--            <div>-->
-          <!--              <div class="font-bold text-gray-800">Griled corn</div>-->
-          <!--              <span class="font-light text-sm text-gray-400">150g</span>-->
-          <!--            </div>-->
-          <!--            <div class="flex flex-row justify-between items-center">-->
-          <!--              <span class="self-end font-bold text-lg text-yellow-500">$1.75</span>-->
-          <!--              <img src="https://source.unsplash.com/MNtag_eXMKw/600x600" class=" h-14 w-14 object-cover rounded-md"-->
-          <!--                   alt="">-->
-          <!--            </div>-->
-          <!--          </div>-->
+          <div v-if="bag.length === 0">No products have been added</div>
         </div>
         <!-- end products -->
       </div>
@@ -178,21 +160,6 @@
               ${{ item.quantity * item.price }}
             </div>
           </div>
-          <!--                    <div class="flex flex-row justify-between items-center mb-4">-->
-          <!--                        <div class="flex flex-row items-center w-2/5">-->
-          <!--                            <img src="https://source.unsplash.com/4u_nRgiLW3M/600x600" class="w-10 h-10 object-cover rounded-md"-->
-          <!--                                 alt="">-->
-          <!--                            <span class="ml-4 font-semibold text-sm">Ranch Burger</span>-->
-          <!--                        </div>-->
-          <!--                        <div class="w-32 flex justify-between">-->
-          <!--                            <span class="px-3 py-1 rounded-md bg-red-300 text-white">x</span>-->
-          <!--                            <span class="font-semibold mx-4">1</span>-->
-          <!--                            <span class="px-3 py-1 rounded-md bg-gray-300 ">+</span>-->
-          <!--                        </div>-->
-          <!--                        <div class="font-semibold text-lg w-16 text-center">-->
-          <!--                            $2.50-->
-          <!--                        </div>-->
-          <!--                    </div>-->
         </div>
         <!-- end order list -->
         <!-- totalItems -->

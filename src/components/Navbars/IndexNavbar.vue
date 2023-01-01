@@ -101,7 +101,7 @@ export default {
 
       await this.deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === 'accepted') {
-          const toast: Toast = {
+          const toast = {
             body: "App installed successfully",
             tittle: "Success",
             type: "success",

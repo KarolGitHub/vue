@@ -1,6 +1,6 @@
 import { ref } from "vue";
 import { auth } from "../../../store";
-import { LogIn } from "../../../interface/Auth";
+import { Login } from "../../../interface/Auth";
 import { Form as VForm, Field, ErrorMessage } from "vee-validate";
 
 export default {
@@ -19,15 +19,15 @@ export default {
       password: "required|min:6",
     };
 
-    const logIn = async (data: LogIn): Promise<void> => {
+    const login = async (data: Login): Promise<void> => {
       console.debug(data);
-      await auth.actions.logIn(data);
+      await auth.actions.login(data);
     };
 
     return {
       github,
       google,
-      logIn,
+      login,
       schema,
     };
   },

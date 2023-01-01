@@ -8,7 +8,7 @@ export interface Register {
   acceptTerms?: boolean;
 }
 
-export interface LogIn {
+export interface Login {
   email: string;
   password: string;
 }
