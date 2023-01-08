@@ -18,29 +18,12 @@ import Register from "@/views/auth/register/Register.vue";
 
 import Landing from "@/views/Landing.vue";
 import Profile from "@/views/Profile.vue";
-import Index from "@/views/Index.vue";
 import Auth from "../layout/Auth.vue";
 import Admin from "../layout/Admin.vue";
 import Home from "../views/home/Home.vue";
 import Sliders from "../views/admin/sliders/Sliders.vue";
 
 const routes: Array<RouteRecordRaw> = [
-  {
-    path: "/login",
-    name: "index",
-    component: Index,
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(
-        /* webpackChunkName: "about" */ "../layout/MainLayout/MainLayout.vue"
-      ),
-  },
   {
     path: "/admin",
     redirect: "/admin/dashboard",
@@ -93,7 +76,7 @@ const routes: Array<RouteRecordRaw> = [
     ],
   },
   {
-    path: "/landing",
+    path: "/about",
     component: Landing,
   },
   {

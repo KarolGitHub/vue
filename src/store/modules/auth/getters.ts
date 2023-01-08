@@ -1,7 +1,10 @@
+import { User } from "../../../interface/User";
 import state from "./state";
 
 const getters = {
-  getToastState: (): boolean => state.isLogged,
+  isLogged: (): boolean => state.isLogged,
+  getAccessToken: (): string | null => state.accessToken,
+  getUser: (): User | null => state.user,
 };
 
 export default getters;

@@ -6,7 +6,7 @@
     <header-navbar></header-navbar>
   </div>
   <div class="row-span-2 col-span-3">
-    <skeleton v-if="loading"></skeleton>
+    <Skeleton v-if="loading"></Skeleton>
     <router-view v-if="!loading"></router-view>
   </div>
 </div>

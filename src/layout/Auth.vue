@@ -1,7 +1,7 @@
 <template>
   <div>
-    <spinner-loading></spinner-loading>
-    <toast></toast>
+    <SpinnerLoading></SpinnerLoading>
+    <Toast></Toast>
     <navbar />
     <main>
       <section class="relative w-full h-full py-40 min-h-screen">

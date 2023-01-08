@@ -16,6 +16,7 @@
     "@vee-validate/rules": "^4.7.3",
     "axios": "^1.2.1",
     "chart.js": "^4.1.1",
+    "dompurify": "^2.4.3",
     "esbuild": "^0.16.11",
     "firebase": "^9.15.0",
     "js-cookie": "^3.0.1",
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.8",
+    "@types/dompurify": "^2.4.0",
     "@types/googlemaps": "^3.43.3",
     "@types/js-cookie": "^3.0.2",
     "@types/node": "^18.11.18",

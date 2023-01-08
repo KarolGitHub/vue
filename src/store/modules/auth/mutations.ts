@@ -1,10 +1,18 @@
 import state from "./state";
-import { Profile } from "../../../interface/Profile";
 
 const mutations = {
-  setAuth(stateLogin: boolean, profile?: Profile | any): void {
+  setAuth(stateLogin: boolean, user?: any): void {
     state.isLogged = stateLogin;
-    state.profile = profile;
+    if (user) {
+      state.accessToken = user.accessToken;
+      state.user = { ...user };
+    } else {
+      state.accessToken = null;
+      state.user = null;
+    }
+  },
+  setAccessToken(accessToken: string | null): void {
+    state.accessToken = accessToken;
   },
 };
 

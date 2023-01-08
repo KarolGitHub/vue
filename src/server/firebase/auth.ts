@@ -1,6 +1,5 @@
 import { SurePromise } from "@/interface/SurePromise";
-import { Profile } from "@/interface/Profile";
-import { auth } from "@/server/firebase/firebase";
+import auth from "@/server/firebase/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

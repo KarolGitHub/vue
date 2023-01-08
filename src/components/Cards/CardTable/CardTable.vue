@@ -12,7 +12,7 @@
           <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
             Search
           </label>
-          <input name="email" v-model="dataFilter" placeholder="Name" type="email"
+          <input v-model="dataFilter" name="email" placeholder="Name" type="email"
             class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" />
         </div>
       </div>
@@ -25,65 +25,65 @@
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
               :class="[
-  color === 'light'
-    ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-    : 'bg-emerald-800 text-emerald-300 border-emerald-700',
-]">
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-emerald-800 text-emerald-300 border-emerald-700',
+              ]">
               Project
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
               :class="[
-  color === 'light'
-    ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-    : 'bg-emerald-800 text-emerald-300 border-emerald-700',
-]">
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-emerald-800 text-emerald-300 border-emerald-700',
+              ]">
               Budget
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
               :class="[
-  color === 'light'
-    ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-    : 'bg-emerald-800 text-emerald-300 border-emerald-700',
-]">
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-emerald-800 text-emerald-300 border-emerald-700',
+              ]">
               Status
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
               :class="[
-  color === 'light'
-    ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-    : 'bg-emerald-800 text-emerald-300 border-emerald-700',
-]">
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-emerald-800 text-emerald-300 border-emerald-700',
+              ]">
               Users
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
               :class="[
-  color === 'light'
-    ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-    : 'bg-emerald-800 text-emerald-300 border-emerald-700',
-]">
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-emerald-800 text-emerald-300 border-emerald-700',
+              ]">
               Completion
             </th>
             <th
               class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
               :class="[
-  color === 'light'
-    ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
-    : 'bg-emerald-800 text-emerald-300 border-emerald-700',
-]"></th>
+                color === 'light'
+                  ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                  : 'bg-emerald-800 text-emerald-300 border-emerald-700',
+              ]"></th>
           </tr>
         </thead>
         <tbody>
-          <tr :key="`table-list-${index}`" v-for="(item, index) in listItems">
+          <tr v-for="(item, index) in listItems" :key="`table-list-${index}`">
             <th
               class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
               <img :src="item.icon" class="h-12 w-12 bg-white rounded-full border" alt="..." />
               <span class="ml-3 font-bold" :class="[
-  color === 'light' ? 'text-blueGray-600' : 'text-white',
-]">
+                color === 'light' ? 'text-blueGray-600' : 'text-white',
+              ]">
                 {{ item.name }}
               </span>
             </th>
@@ -91,7 +91,7 @@
               {{ item.budget }}
             </td>
             <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-              <div v-html="validateStatus(item.status)">
+              <div v-sane-html="validateStatus(item.status)">
 
               </div>
             </td>
@@ -107,10 +107,10 @@
                 <div class="relative w-full">
                   <div class="overflow-hidden h-2 text-xs flex rounded bg-red-200">
                     <div :style="{ 'width': item.completion + '%' }" :class="{
-  'bg-red-500': item.completion <= 79,
-  'bg-teal-500': item.completion <= 99,
-  'bg-emerald-500': item.completion === 100
-}" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center"></div>
+                      'bg-red-500': item.completion <= 79,
+                      'bg-teal-500': item.completion <= 99,
+                      'bg-emerald-500': item.completion === 100
+                    }" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center"></div>
                   </div>
                 </div>
               </div>

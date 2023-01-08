@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a class="text-blueGray-500 block" href="#" ref="btnDropdownRef" @click="toggleDropdown($event)">
+    <a ref="btnDropdownRef" class="text-blueGray-500 block" href="#" @click="toggleDropdown($event)">
       <div class="items-center flex">
         <span class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full">
           <img alt="..." class="w-full rounded-full align-middle border-none shadow-lg" :src="image" />
@@ -8,13 +8,14 @@
       </div>
     </a>
     <div ref="popoverDropdownRef"
-      class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" v-bind:class="{
-  hidden: !dropdownPopoverShow,
-  block: dropdownPopoverShow,
-}">
+      class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48" :class="{
+        hidden: !dropdownPopoverShow,
+        block: dropdownPopoverShow,
+      }">
       <a href="javascript:void(0);"
-        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700">
-        Action
+        class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+        @click="logout">
+        Logout
       </a>
     </div>
   </div>
@@ -22,7 +23,7 @@
 
 <script>
 import { createPopper } from '@popperjs/core';
-
+import { auth } from '@/store'
 import image from '@/assets/img/team-1-800x800.jpg';
 
 export default {
@@ -44,6 +45,9 @@ export default {
         });
       }
     },
+    logout() {
+      auth.actions.logout();
+    }
   },
 };
 </script>
