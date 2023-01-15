@@ -12,14 +12,14 @@ export default class Auth {
 
   public async login(userForm: Login): Promise<SurePromise<UserCredential>> {
     //axiosService<Profile, Login>()
-    //return await axiosService<Profile, Login>.instance.postData()(userForm, '/accounts/authenticate')
-    return await this.axiosService.postData(userForm, "/accounts/authenticate");
+    //return await axiosService<Profile, Login>.instance.post()(userForm, '/accounts/authenticate')
+    return await this.axiosService.post(userForm, "/accounts/authenticate");
   }
 
   public async register(
     registerForm: Register
   ): Promise<SurePromise<UserCredential>> {
     //const axiosService = axiosService<Login, Register>()
-    return await this.axiosService.postData(registerForm, "/accounts/register");
+    return await this.axiosService.post(registerForm, "/accounts/register");
   }
 }

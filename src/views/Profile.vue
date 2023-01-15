@@ -60,7 +60,7 @@
                 </div>
               </div>
               <div class="text-center mt-12">
-                <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
+                <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
                   Jenna Stones
                 </h3>
                 <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
@@ -107,14 +107,14 @@ import FooterComponent from '@/components/Footers/Footer/Footer.vue';
 import team2 from '@/assets/img/team-2-800x800.jpg';
 
 export default {
+  components: {
+    Navbar,
+    FooterComponent,
+  },
   data() {
     return {
       team2,
     };
-  },
-  components: {
-    Navbar,
-    FooterComponent,
   },
 };
 </script>

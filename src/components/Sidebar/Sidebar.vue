@@ -27,7 +27,7 @@
       <!-- Collapse -->
       <div
         class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded"
-        v-bind:class="collapseShow">
+        :class="collapseShow">
         <hr class="my-4 md:min-w-full" />
         <ul class="flex-col md:flex-row list-none items-center hidden md:flex mr-2">
           <select-theme-dropdown></select-theme-dropdown>
@@ -69,12 +69,12 @@
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none">
           <li class="inline-flex">
-            <router-link to="/admin/dashboard" v-slot="{ href, navigate, isActive }">
-              <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+            <router-link v-slot="{ href, navigate, isActive }" to="/admin/dashboard">
+              <a :href="href" class="text-xs uppercase py-3 font-bold block" :class="[
                 isActive
                   ? 'text-emerald-500 hover:text-emerald-600'
                   : 'text-blueGray-700 dark:text-white hover:text-blueGray-500',
-              ]">
+              ]" @click="navigate">
                 <i class="fas fa-tv mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"></i>
                 Dashboard
               </a>
@@ -82,25 +82,25 @@
           </li>
 
           <li class="inline-flex">
-            <router-link to="/admin/settings" v-slot="{ href, navigate, isActive }">
-              <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+            <router-link v-slot="{ href, navigate, isActive }" to="/admin/stock">
+              <a :href="href" class="text-xs uppercase py-3 font-bold block" :class="[
                 isActive
                   ? 'text-emerald-500 hover:text-emerald-600'
                   : 'text-blueGray-700 dark:text-white hover:text-blueGray-500',
-              ]">
-                <i class="fas fa-tools mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"></i>
-                Settings
+              ]" @click="navigate">
+                <i class="fas fa-chart-line mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"></i>
+                Stock
               </a>
             </router-link>
           </li>
 
           <li class="inline-flex">
-            <router-link to="/admin/tables" v-slot="{ href, navigate, isActive }">
-              <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+            <router-link v-slot="{ href, navigate, isActive }" to="/admin/tables">
+              <a :href="href" class="text-xs uppercase py-3 font-bold block" :class="[
                 isActive
                   ? 'text-emerald-500 hover:text-emerald-600'
                   : 'text-blueGray-700 dark:text-white hover:text-blueGray-500',
-              ]">
+              ]" @click="navigate">
                 <i class="fas fa-table mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"></i>
                 Tables
               </a>
@@ -108,38 +108,53 @@
           </li>
 
           <li class="inline-flex">
-            <router-link to="/admin/maps" v-slot="{ href, navigate, isActive }">
-              <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+            <router-link v-slot="{ href, navigate, isActive }" to="/admin/maps">
+              <a :href="href" class="text-xs uppercase py-3 font-bold block" :class="[
                 isActive
                   ? 'text-emerald-500 hover:text-emerald-600'
                   : 'text-blueGray-700 dark:text-white hover:text-blueGray-500',
-              ]">
+              ]" @click="navigate">
                 <i class="fas fa-map-marked mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"></i>
                 Maps
               </a>
             </router-link>
           </li>
+
           <li class="inline-flex">
-            <router-link to="/admin/pos" v-slot="{ href, navigate, isActive }">
-              <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+            <router-link v-slot="{ href, navigate, isActive }" to="/admin/pos">
+              <a :href="href" class="text-xs uppercase py-3 font-bold block" :class="[
                 isActive
                   ? 'text-emerald-500 hover:text-emerald-600'
                   : 'text-blueGray-700 dark:text-white hover:text-blueGray-500',
-              ]">
+              ]" @click="navigate">
                 <i class="fas fa-calculator mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"></i>
                 POS
               </a>
             </router-link>
           </li>
+
           <li class="inline-flex">
-            <router-link to="/admin/sliders" v-slot="{ href, navigate, isActive }">
-              <a :href="href" @click="navigate" class="text-xs uppercase py-3 font-bold block" :class="[
+            <router-link v-slot="{ href, navigate, isActive }" to="/admin/sliders">
+              <a :href="href" class="text-xs uppercase py-3 font-bold block" :class="[
                 isActive
                   ? 'text-emerald-500 hover:text-emerald-600'
                   : 'text-blueGray-700 dark:text-white hover:text-blueGray-500',
-              ]">
+              ]" @click="navigate">
                 <i class="fas fa-sliders-h mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"></i>
                 Sliders
+              </a>
+            </router-link>
+          </li>
+
+          <li class="inline-flex">
+            <router-link v-slot="{ href, navigate, isActive }" to="/admin/settings">
+              <a :href="href" class="text-xs uppercase py-3 font-bold block" :class="[
+                isActive
+                  ? 'text-emerald-500 hover:text-emerald-600'
+                  : 'text-blueGray-700 dark:text-white hover:text-blueGray-500',
+              ]" @click="navigate">
+                <i class="fas fa-tools mr-2 text-sm" :class="[isActive ? 'opacity-75' : 'text-blueGray-300']"></i>
+                Settings
               </a>
             </router-link>
           </li>

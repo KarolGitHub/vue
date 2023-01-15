@@ -8,10 +8,30 @@ import { notifications } from "../../store";
 import { SurePromise } from "../../interface/SurePromise";
 
 export class AxiosService<T, U> {
-  async postData(postData: U, url: string): Promise<SurePromise<T>> {
+  async post(data: U, url: string): Promise<SurePromise<T>> {
     loading.actions.start("Loading...");
     try {
-      return await surePromise(apiClient.post<AxiosResponse>(url, postData));
+      return await surePromise(apiClient.post<AxiosResponse>(url, data));
+    } catch (err: unknown) {
+      if (err && err.response) {
+        const axiosError = err as AxiosError;
+        const toast: Toast = {
+          body: axiosError.response?.data.message,
+          tittle: "Error",
+          type: "error",
+          show: true,
+        };
+        notifications.actions.presentToast(toast);
+      }
+      throw err;
+    } finally {
+      loading.actions.finish();
+    }
+  }
+  async get(data: U, url: string): Promise<SurePromise<T>> {
+    loading.actions.start("Loading...");
+    try {
+      return await surePromise(apiClient.get<AxiosResponse>(url, data));
     } catch (err: unknown) {
       if (err && err.response) {
         const axiosError = err as AxiosError;

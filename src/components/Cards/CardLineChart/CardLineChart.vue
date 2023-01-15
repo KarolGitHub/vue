@@ -65,8 +65,8 @@ const config: ChartConfiguration = {
       {
         label: (new Date().getFullYear() - 1).toString(),
         fill: false,
-        backgroundColor: '#fff',
-        borderColor: '#fff',
+        backgroundColor: '#FF0000',
+        borderColor: '#FF0000',
         data: [40, 68, 86, 74, 56, 60, 87],
       },
     ],
@@ -82,7 +82,7 @@ const config: ChartConfiguration = {
       },
       legend: {
         labels: {
-          color: 'white',
+          color: '#808080',
         },
         align: 'end',
         position: 'bottom',
@@ -109,8 +109,8 @@ const config: ChartConfiguration = {
         },
         grid: {
           display: false,
-          borderDash: [2],
-          borderDashOffset: 2,
+          tickBorderDash: [2],
+          tickBorderDashOffset: 2,
           color: 'rgba(33, 37, 41, 0.3)',
         },
       },
@@ -125,9 +125,9 @@ const config: ChartConfiguration = {
           color: '#000000',
         },
         grid: {
-          borderDash: [3],
-          borderDashOffset: 3,
-          drawBorder: false,
+          tickBorderDash: [3],
+          tickBorderDashOffset: 3,
+          // drawBorder: false,
           color: 'rgba(255, 255, 255, 0.15)',
         },
       },
@@ -153,8 +153,8 @@ watch(() => theme.value, (value) => {
   } else {
     config.options!.scales!.x!.grid!.color = 'rgba(248,249,253,0.3)'
     config.options!.scales!.y!.grid!.color = 'rgba(248,249,253,0.3)'
-    config.data.datasets[1].backgroundColor = '#fff'
-    config.data.datasets[1].borderColor = '#fff'
+    config.data.datasets[1].backgroundColor = '#FF0000'
+    config.data.datasets[1].borderColor = '#FF0000'
     config.options!.scales!.x!.ticks!.color = 'rgba(255,255,255,.7)'
     config.options!.scales!.y!.ticks!.color = 'rgba(255,255,255,.7)'
   }

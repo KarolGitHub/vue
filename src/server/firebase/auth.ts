@@ -1,4 +1,4 @@
-import { SurePromise } from "@/interface/SurePromise";
+// import { SurePromise } from "@/interface/SurePromise";
 import auth from "@/server/firebase/firebase";
 import {
   createUserWithEmailAndPassword,

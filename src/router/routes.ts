@@ -5,9 +5,10 @@ import { RouteRecordRaw } from "vue-router";
 // views for Admin layout
 
 import Dashboard from "@/views/admin/Dashboard/Dashboard.vue";
-import Settings from "@/views/admin/settings/Settings.vue";
+import Stock from "@/views/admin/Stock/Stock.vue";
 import Tables from "@/views/admin/tables/Tables.vue";
 import Maps from "@/views/admin/Maps.vue";
+import Settings from "@/views/admin/settings/Settings.vue";
 
 // views for Auth layout
 
@@ -35,8 +36,9 @@ const routes: Array<RouteRecordRaw> = [
         component: Dashboard,
       },
       {
-        path: "/admin/settings",
-        component: Settings,
+        path: "/admin/stock",
+        name: "Stock",
+        component: Stock,
       },
       {
         path: "/admin/tables",
@@ -55,6 +57,10 @@ const routes: Array<RouteRecordRaw> = [
         path: "/admin/sliders",
         name: "sliders",
         component: Sliders,
+      },
+      {
+        path: "/admin/settings",
+        component: Settings,
       },
     ],
   },

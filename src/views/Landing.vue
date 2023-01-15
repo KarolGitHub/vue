@@ -468,6 +468,10 @@ import team3 from '@/assets/img/team-3-800x800.jpg';
 import team4 from '@/assets/img/team-4-470x470.png';
 
 export default {
+  components: {
+    Navbar,
+    FooterComponent,
+  },
   data() {
     return {
       team1,
@@ -475,10 +479,6 @@ export default {
       team3,
       team4,
     };
-  },
-  components: {
-    Navbar,
-    FooterComponent,
-  },
+  }
 };
 </script>

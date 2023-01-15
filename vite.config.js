@@ -97,6 +97,10 @@ export default defineConfig({
         find: "@/",
         replacement: path.resolve(__dirname, "./src"),
       },
+      {
+        find: "@/services",
+        replacement: path.resolve(__dirname, "./src/services"),
+      },
     ],
   },
   optimizeDeps: {
