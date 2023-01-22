@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full">
     <SpinnerLoading></SpinnerLoading>
     <Toast></Toast>
     <navbar />

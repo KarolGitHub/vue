@@ -36,6 +36,7 @@ module.exports = {
     "vue/multi-word-component-names": "off",
     "vue/no-reserved-component-names": "off",
     "vue/first-attribute-linebreak": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
   },
   overrides: [
     {

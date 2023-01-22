@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="h-full">
     <SpinnerLoading></SpinnerLoading>
     <Toast></Toast>
     <sidebar />
-    <div class="relative md:ml-64 bg-blueGray-100">
+    <div class="h-full relative md:ml-64 bg-blueGray-100">
       <admin-navbar />
       <header-stats />
       <div class="px-4 dark:bg-black md:px-10 mx-auto w-full -m-24">

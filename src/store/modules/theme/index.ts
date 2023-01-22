@@ -1,7 +1,8 @@
 import { reactive } from "vue";
+import checkDarkMode from "@/plugins/darkModeMedia";
 
 const storageTheme = reactive({
-  theme: "",
+  theme: checkDarkMode() ? "1" : "0",
 });
 
 const setTheme = (theme: string): void => {

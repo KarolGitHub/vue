@@ -12,8 +12,8 @@
         </div>
       </div>
     </div>
+
     <div class="p-4 flex-auto">
-      <!-- Chart -->
       <div class="relative h-350-px">
         <canvas id="line-chart"></canvas>
       </div>
@@ -138,14 +138,11 @@ const config: ChartConfiguration = {
 const theme = computed(() => storageTheme.theme)
 
 watch(() => theme.value, (value) => {
-  console.debug('oldValue', value)
-  if (value === 'dark') {
+  if (value) {
     config.options!.scales!.x!.grid!.color = '#000000'
     config.options!.scales!.y!.grid!.color = '#000000'
     config.options!.scales!.x!.ticks!.color = '#000'
     config.options!.scales!.y!.ticks!.color = '#000'
-    // config.options!.scales!.y!..color = '#000'
-    console.debug('chart', Chart)
     config.data.datasets[1].backgroundColor = '#000000'
     config.data.datasets[1].borderColor = '#000000'
     // @ts-ignore
