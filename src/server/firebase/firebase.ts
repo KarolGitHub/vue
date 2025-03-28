@@ -1,9 +1,11 @@
-import firebase from "firebase/compat";
-import firebaseConfig from "@/server/firebase/config";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+import firebaseConfig from "@/server/firebase/config";
 // firebaseApp.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
+const firebaseApp = initializeApp(firebaseConfig);
 
-export const db = firebaseApp.firestore();
-const auth = getAuth(firebaseApp);
+export const db = getFirestore(firebaseApp);
+export const auth = getAuth(firebaseApp);
+
 export default auth;

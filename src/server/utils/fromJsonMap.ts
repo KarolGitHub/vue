@@ -1,18 +1,18 @@
 import { Item } from "@/server/models/Item";
-import firebase from "firebase/compat";
-import DocumentData = firebase.firestore.DocumentData;
+import { DocumentData } from "firebase/firestore";
 
 const fromJsonMap = (
   itemDoc: DocumentData | undefined,
-  idDocument: string
+  idDocument: string,
 ): Item | undefined => {
-  if (itemDoc == null) return {};
-  const item: Item = {};
-  item.id = idDocument;
-  item.name = itemDoc.name ?? "";
-  item.color = itemDoc.color ?? "";
-  item.price = itemDoc.price ?? 0;
-  item.image = itemDoc.image ?? "";
+  if (itemDoc == null) return undefined;
+  const item: Item = {
+    id: idDocument,
+    name: itemDoc.name ?? "",
+    color: itemDoc.color ?? "",
+    price: itemDoc.price ?? 0,
+    image: itemDoc.image ?? "",
+  };
   return item;
 };
 
